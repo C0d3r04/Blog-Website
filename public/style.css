@@ -1,0 +1,41 @@
+body{
+    background-color: #ddebca;
+}
+
+header{
+    text-align: center;
+    height: 100px;
+    padding-top: 1px;
+    background-color: #81e799;
+    color: #fcfafa;
+    font-size: x-large;
+}
+
+h3{
+    margin-top: 2px;
+    text-align: center;
+    background-color: #81e799;
+}
+
+        
+form{
+    width: 45%;
+    display:inline-block;
+    margin: 25px;
+
+}
+
+#all{
+    text-align: center;
+    padding-top: 1px;
+    color: #000000;
+    font-size: xx-large;
+}
+
+#entriesList{
+    text-align: left;
+}
+
+#entriesList li{
+    font-size: 20px;
+}

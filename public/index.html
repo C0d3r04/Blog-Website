@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+    <meta charset = "UTF-8">
+    <link rel = "stylesheet" href="style.css">
+    <title> Blog Website</title>
+    </head>
+
+    <body>
+        <header>
+        <h1>Your Blogs</h1>
+        </header>
+        <form action="/add" method="POST" id="add">
+        <fieldset class="fs">
+            <h3>Create New Blog</h3>
+            <label>Blog Name</label>
+            <input type ="text" id = 'BlogName' name="name" required>
+            <br><br>
+            <label>Content</label>
+            <input type="text" id = "data" name="content" required>
+            <br><br>
+            <button type ="reset">Reset</button>
+            <button type ="submit">Submit</button>
+        </fieldset>
+        </form>
+
+        <form action="/view" method="POST" id="view">
+            <fieldset class="fs">
+            <h3>View a Blog</h3>
+            <label>Blog Name</label>
+            <input type="text" id="BlogName" name="name" required>
+            <br><br>
+            <button type ="reset">Reset</button>
+            <button type ="submit">Submit</button>
+            <br><br><br>
+            </fieldset>
+        </form>
+
+        <form action="/update" method="POST" id="update">
+            <fieldset class="fs">
+            <h3>Update a Blog</h3>
+            <label>Blog Name</label>
+            <input type ="text" id = 'BlogNameold' name="name" required>
+            <br><br>
+            <label>New Blog Name</label>
+            <input type="text" id = "BlogNamenew" name="newname" required>
+            <br><br>
+            <label>Content</label>
+            <input type="text" id = "data" name="content" required>
+            <br><br>
+            <button type ="reset">Reset</button>
+            <button type ="submit">Submit</button>
+            </fieldset>
+        </form>
+
+        <form action="/delete" method="POST" id="delete">
+            <fieldset class="fs">
+            <h3>Delete a Blog</h3>
+            <label>Blog Name</label>
+            <input type ="text" id = 'BlogName' name="name" required>
+            <br><br>
+            <button type ="reset">Reset</button>
+            <button type ="submit">Submit</button>
+            <br><br><br>
+            </fieldset>
+        </form>
+
+    <h1 id="all">All Blogs</h1>
+    <ul id="entriesList"></ul>
+
+    <script>
+    fetch('/entries')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to fetch entries');
+        }
+        return response.json();
+    })
+    .then(data => {
+        const entriesList = document.getElementById('entriesList');
+        data.forEach(entry => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `<strong>Blog Name:</strong> ${entry.BlogName}<br><span style="margin-left: 20px;"><strong>Content:</strong> ${entry.BlogData}</span>`;
+            entriesList.appendChild(listItem);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching entries:', error);
+    });
+    </script>
+    
+    </body>
+</html>
