@@ -3,4 +3,9 @@ The database folder contains the blogs.db file is a database file storing the ta
 The public folder contains index.html and style.css. The HTML file is the basic framework of the website, containing forms, headers, and paragraphs to display the content and allow the user to interface with CRUD operations. The CSS file is used for beautification of the webpage. (Not much attention has been given to the CSS aspect of the project; the primary focus was implementing the CRUD operations)
 The app.js file is the javascript file, which is the main component of the backend. It connects the database to the webpage and handles the logic of the blog website.
 
+The following is a link to the video of the functioning website:
+[https://drive.google.com/file/d/10FAd7MooROqhjKBJ9soz8Al2bAJ5MFQ1/view?usp=drive_link](url)
+
 P.S. After performing an operation using any of the provided forms, you need to traverse back to the login page and refresh it to see the updated blogs.
+
+
